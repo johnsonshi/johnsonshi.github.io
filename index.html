@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johnson Shi — Senior Product Manager, Microsoft Azure</title>
+<meta name="description" content="Johnson Shi — Senior Product Manager at Microsoft Azure. Shaping the container infrastructure behind the world's largest cloud and AI workloads.">
+<meta name="author" content="Johnson Shi">
+<meta name="theme-color" content="#04090a">
+<link rel="canonical" href="https://johnsonshi.com/">
+
+<!-- Favicons: SVG for modern browsers (sharp at any size), .ico fallback, apple-touch for iOS -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Open Graph (link previews: LinkedIn, Teams, Slack, iMessage…) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnsonshi.com/">
+<meta property="og:title" content="Johnson Shi — Senior Product Manager, Microsoft Azure">
+<meta property="og:description" content="Shaping the container infrastructure behind the world's largest cloud and AI workloads.">
+<meta property="og:site_name" content="Johnson Shi">
+<meta property="og:image" content="https://johnsonshi.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Johnson Shi — Senior Product Manager, Microsoft Azure">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Johnson Shi — Senior Product Manager, Microsoft Azure">
+<meta name="twitter:description" content="Shaping the container infrastructure behind the world's largest cloud and AI workloads.">
+<meta name="twitter:image" content="https://johnsonshi.com/og-image.png">
+
+<!-- Structured data: tells Google who this page is about and links your profiles -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Johnson Shi",
+  "jobTitle": "Senior Product Manager",
+  "worksFor": { "@type": "Organization", "name": "Microsoft" },
+  "url": "https://johnsonshi.com/",
+  "sameAs": [
+    "https://www.linkedin.com/in/johnsonshi/",
+    "https://x.com/johnsonshi86",
+    "https://github.com/johnsonshi",
+    "https://johnsonshi.substack.com/",
+    "https://techcommunity.microsoft.com/users/johnsonshi_msft/1014286"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   LIQUID GLASS — dark teal atmosphere, neon lime + cyan,
+   frosted slabs with gradient edges, cursor-lit speculars.
+   No italics. No serifs.
+   ============================================================ */
+:root{
+  --bg-0:#04090a;
+  --lime:#d7f23a;
+  --cyan:#54e8d4;
+  --white:#f2f7f5;
+  --dim:rgba(242,247,245,.62);
+  --dim-2:rgba(242,247,245,.38);
+  --glass:rgba(255,255,255,.045);
+  --edge:rgba(255,255,255,.14);
+  --r:26px;
+  --ease:cubic-bezier(.25,.8,.25,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;font-style:normal}
+html{scroll-behavior:smooth}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+
+body{
+  font-family:'Geist',-apple-system,'Segoe UI',sans-serif;
+  background:var(--bg-0);color:var(--white);
+  line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--lime);color:#0a1206}
+a{color:inherit}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+section{padding:clamp(76px,9vw,140px) 0;position:relative}
+
+/* ============================================================
+   ATMOSPHERE — drifting glow orbs the glass refracts
+   ============================================================ */
+.atmo{position:fixed;inset:0;z-index:-2;overflow:hidden;background:
+  radial-gradient(120% 90% at 80% -10%, #0a2a20 0%, transparent 55%),
+  radial-gradient(110% 80% at -10% 30%, #071d2e 0%, transparent 55%),
+  radial-gradient(100% 100% at 50% 110%, #0a1f16 0%, transparent 60%),
+  var(--bg-0);
+}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);will-change:transform}
+.orb-1{width:54vw;height:54vw;top:-18%;right:-14%;background:radial-gradient(circle,rgba(84,232,212,.16),transparent 65%)}
+.orb-2{width:44vw;height:44vw;top:36%;left:-16%;background:radial-gradient(circle,rgba(74,168,255,.13),transparent 65%)}
+.orb-3{width:40vw;height:40vw;bottom:-14%;right:8%;background:radial-gradient(circle,rgba(215,242,58,.09),transparent 65%)}
+
+/* global cursor glow */
+.cursor-glow{
+  position:fixed;width:560px;height:560px;border-radius:50%;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle,rgba(215,242,58,.105) 0%,rgba(84,232,212,.07) 35%,transparent 70%);
+  left:0;top:0;opacity:0;will-change:transform,opacity;
+}
+
+
+/* ============================================================
+   GLASS RECIPE — frosted body + gradient edge + specular
+   ============================================================ */
+.glass{
+  position:relative;background:var(--glass);border-radius:var(--r);
+  -webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);
+  box-shadow:0 24px 60px -28px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.10);
+}
+.glass::before{ /* gradient light edge */
+  content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,255,255,.05) 32%,rgba(84,232,212,.16) 68%,rgba(215,242,58,.26));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+}
+
+/* 3D tilt */
+.tilt{transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px));transition:transform .18s ease-out;will-change:transform}
+
+/* reveals */
+[data-r]{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+[data-r].in{opacity:1;transform:none}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(4,9,10,.65);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom-color:rgba(255,255,255,.07)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{
+  display:inline-flex;align-items:center;font-weight:800;font-size:1rem;letter-spacing:.04em;
+  text-decoration:none;background:var(--lime);color:#0c1405;padding:9px 20px;border-radius:14px;
+  text-transform:uppercase;transition:box-shadow .3s,transform .3s var(--ease);
+}
+.brand:hover{box-shadow:0 0 30px -4px rgba(215,242,58,.5);transform:translateY(-1px)}
+
+/* ============================================================
+   1 · HERO — the glass slab with corner tubes
+   ============================================================ */
+.hero{padding:clamp(130px,17vh,190px) 0 clamp(60px,8vw,110px)}
+.slab{padding:clamp(36px,6vw,84px) clamp(26px,6vw,84px);border-radius:clamp(28px,4vw,48px)}
+.kicker{color:var(--lime);font-size:clamp(.95rem,1.6vw,1.2rem);font-weight:500;margin-bottom:22px;opacity:0;animation:fade .8s var(--ease) .15s forwards}
+.hero h1{
+  font-size:clamp(2.7rem,7.6vw,5.9rem);font-weight:700;letter-spacing:-.035em;line-height:1.04;
+  max-width:24ch;
+}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln>span{display:inline-block;transform:translateY(108%);animation:rise .9s var(--ease) forwards}
+.hero h1 .ln:nth-child(2)>span{animation-delay:.1s}
+.hero h1 .hl{color:var(--lime)}
+@keyframes rise{to{transform:none}}
+@keyframes fade{to{opacity:1}}
+.hero-sub{margin-top:24px;max-width:560px;color:var(--dim);font-size:clamp(1rem,1.5vw,1.15rem);opacity:0;animation:fade .8s var(--ease) .5s forwards}
+
+/* ============================================================
+   SECTION HEADS
+   ============================================================ */
+.sec-head{max-width:760px;margin-bottom:clamp(38px,5vw,60px)}
+.sec-kicker{color:var(--lime);font-size:.95rem;font-weight:600;margin-bottom:14px}
+.sec-head h2{font-size:clamp(1.9rem,4.4vw,3.1rem);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+
+/* ============================================================
+   2 · WHAT I DO
+   ============================================================ */
+.do-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+
+.do-card{padding:32px 30px}
+.do-card .glyph{
+  width:54px;height:54px;border-radius:16px;display:grid;place-items:center;margin-bottom:24px;
+  background:linear-gradient(135deg,rgba(215,242,58,.14),rgba(84,232,212,.10));
+  border:1px solid rgba(215,242,58,.25);
+}
+.do-card .glyph svg{width:24px;height:24px;stroke:var(--lime)}
+.do-card .label{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim-2);margin-bottom:10px}
+.do-card h3{font-size:1.32rem;font-weight:700;letter-spacing:-.015em;margin-bottom:10px}
+.do-card p{font-size:.95rem;color:var(--dim)}
+
+.mission{
+  margin-top:clamp(64px,8vw,110px);max-width:980px;
+  font-size:clamp(1.2rem,2.6vw,1.9rem);font-weight:700;letter-spacing:-.02em;line-height:1.3;
+}
+.mission .mline{display:block}
+.mission .mline+.mline{margin-top:2.4em}
+.mission .w{color:rgba(242,247,245,.14);transition:color .3s linear}
+.mission .w.lit{color:var(--white)}
+.mission .w.lime.lit .li{color:var(--lime)}
+.hero-sub .accent{color:var(--lime);font-weight:500}
+
+/* ============================================================
+   2.5 · EXPERIENCE — scroll-drawn spine timeline
+   ============================================================ */
+.tl{position:relative;max-width:1040px;margin:0 auto}
+.tl-line{position:absolute;left:50%;top:6px;width:2px;transform:translateX(-50%);background:rgba(255,255,255,.08);border-radius:2px}
+.tl-fill{position:absolute;inset:0;background:linear-gradient(180deg,var(--lime),var(--cyan));transform:scaleY(0);transform-origin:top;border-radius:2px}
+.tl-era{position:relative}
+.tl-chip{
+  width:max-content;margin:0 auto 28px;
+  padding:8px 18px;border-radius:99px;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--lime);
+}
+.tl-item{
+  position:relative;width:calc(50% - 44px);margin-bottom:30px;
+  opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);
+}
+.tl-item.lit{opacity:1;transform:none}
+.tl-item.r{margin-left:auto}
+.tl-dot{
+  position:absolute;top:62px;width:13px;height:13px;border-radius:50%;z-index:4;
+  background:rgba(255,255,255,.22);transition:background .4s,box-shadow .4s;
+}
+.tl-item.l .tl-dot{right:-50px}
+.tl-item.r .tl-dot{left:-50px}
+.tl-item.lit .tl-dot{background:var(--lime);box-shadow:0 0 14px rgba(215,242,58,.55)}
+.tl-item.now.lit .tl-dot{box-shadow:0 0 24px rgba(215,242,58,.85)}
+.tl-card{padding:24px 26px}
+.tl-card h3{font-size:1.12rem;font-weight:700;letter-spacing:-.01em}
+.tl-org{font-size:.95rem;font-weight:600;color:var(--lime);margin-top:5px}
+.tl-meta{font-size:.8rem;color:var(--dim-2);margin:3px 0 10px}
+.tl-card p{font-size:.9rem;color:var(--dim)}
+
+
+/* ============================================================
+   3 · WRITING — glass tabs + paginated glass cards
+   ============================================================ */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.tab{
+  font-family:inherit;font-size:.9rem;font-weight:600;padding:11px 20px;border-radius:14px;cursor:pointer;
+  background:var(--glass);border:1px solid var(--edge);color:var(--dim);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  transition:all .25s var(--ease);
+}
+.tab:hover{color:var(--white);border-color:rgba(215,242,58,.45)}
+.tab.active{background:var(--lime);color:#0c1405;border-color:transparent;box-shadow:0 0 26px -6px rgba(215,242,58,.45)}
+
+.car-track{display:grid}
+/* shared crossfade for stacked pages/slides: quick fade-out in place, delayed fade-up entrance */
+.fader{
+  grid-area:1/1;pointer-events:none;opacity:0;transform:translateY(14px);
+  transition:opacity .28s var(--ease),transform 0s linear .28s;
+}
+.fader.active{opacity:1;transform:none;pointer-events:auto;transition:opacity .5s var(--ease) .14s,transform .55s var(--ease) .14s}
+
+.car-page{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-content:start}
+
+
+.wcard{display:flex;flex-direction:column;padding:30px;text-decoration:none;min-height:250px}
+.wcard h3{font-size:1.24rem;font-weight:700;letter-spacing:-.015em;line-height:1.3;margin-bottom:10px}
+.wcard p{font-size:.93rem;color:var(--dim);flex:1}
+.more{display:inline-flex;align-items:center;gap:8px;font-size:.9rem;font-weight:600;margin-top:18px;color:var(--lime)}
+.gh-stats{display:flex;align-items:center;gap:16px;font-size:.82rem;color:var(--dim);margin-top:14px;min-height:1em}
+.gh-stats .it{display:inline-flex;align-items:center;gap:6px}
+.gh-stats .lang-dot{width:10px;height:10px;border-radius:50%}
+.gh-stats svg{width:14px;height:14px;fill:var(--dim-2)}
+.more svg{transition:transform .25s var(--ease)}
+.wcard:hover .more svg{transform:translateX(4px)}
+
+.pager{display:flex;align-items:center;justify-content:center;gap:22px}
+.car-foot{margin-top:28px}
+.abtn{
+  width:48px;height:48px;border-radius:14px;cursor:pointer;display:grid;place-items:center;color:var(--white);
+  background:var(--glass);border:1px solid var(--edge);
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  transition:all .25s var(--ease);
+}
+.abtn:hover{border-color:rgba(215,242,58,.55);color:var(--lime);box-shadow:0 0 22px -6px rgba(215,242,58,.35)}
+.dots{display:flex;gap:8px}
+.dot{width:7px;height:7px;border-radius:99px;background:rgba(255,255,255,.18);border:none;padding:0;cursor:pointer;transition:all .3s var(--ease)}
+.dot.active{width:26px;background:var(--lime);box-shadow:0 0 12px rgba(215,242,58,.5)}
+
+/* ============================================================
+   4 · TESTIMONIALS — one big glass panel
+   ============================================================ */
+.t-panel{padding:clamp(34px,5vw,64px);border-radius:clamp(26px,3vw,40px)}
+.t-stage{display:grid;max-width:860px;margin:0 auto;text-align:center}
+.t-slide{display:flex;flex-direction:column;align-items:center;justify-content:center}
+.t-slide blockquote{font-size:clamp(1.2rem,2.6vw,1.8rem);font-weight:600;letter-spacing:-.02em;line-height:1.45}
+.t-slide blockquote p+p{margin-top:.8em}
+.t-role{margin-top:28px;font-size:.95rem;font-weight:600;color:var(--white)}
+.t-foot{margin-top:36px}
+
+/* ============================================================
+   5 · CONNECT
+   ============================================================ */
+.social{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:clamp(34px,5vw,52px)}
+/* odd number of links: last card keeps one-column width, rendered centered */
+.social .srow:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 8px);justify-self:start}
+@media(max-width:760px){.do-grid{grid-template-columns:1fr}
+
+  .tl-line{left:14px;transform:none}
+  .tl-item,.tl-item.r{width:auto;margin-left:44px}
+  .tl-item.l .tl-dot,.tl-item.r .tl-dot{left:-35.5px;right:auto}
+  .tl-chip{margin:0 0 24px 44px}
+.car-page{grid-template-columns:1fr}
+
+  .social{grid-template-columns:1fr}
+  .social .srow:last-child:nth-child(odd){grid-column:auto;width:auto;justify-self:stretch}
+}
+.srow{display:flex;align-items:center;justify-content:space-between;text-decoration:none;padding:24px 26px}
+.srow .l{display:flex;align-items:center;gap:16px}
+.srow .mark{
+  width:46px;height:46px;border-radius:14px;display:grid;place-items:center;flex:none;
+  border:1px solid var(--edge);background:rgba(255,255,255,.04);
+}
+.srow .mark svg{width:20px;height:20px}
+.srow .name{font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+.srow .handle{font-size:.84rem;color:var(--dim-2);margin-top:1px}
+.srow .go{color:var(--dim-2);transition:transform .25s var(--ease),color .25s}
+.srow:hover .go{transform:translate(3px,-3px);color:var(--lime)}
+
+footer{border-top:1px solid rgba(255,255,255,.08);padding:34px 0 46px;margin-top:clamp(40px,6vw,80px)}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:.85rem;color:var(--dim-2)}
+
+@media(prefers-reduced-motion:reduce){.cursor-glow{display:none}
+
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+  [data-r]{opacity:1;transform:none}
+  .mission .w{color:var(--white)}
+  .mission .w.lime .li{color:var(--lime)}
+  .tl-item{opacity:1;transform:none}
+  .tl-fill{transform:none}
+  .tilt{transform:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="atmo" aria-hidden="true">
+  <div class="orb orb-1" data-px="0.25"></div>
+  <div class="orb orb-2" data-px="0.4"></div>
+  <div class="orb orb-3" data-px="0.18"></div>
+</div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Johnson Shi</a>
+  </div>
+</header>
+
+<!-- ============ 1 · HERO ============ -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="slab glass tilt" data-r data-tilt-max="2.5">
+        <div class="kicker">Hi, I'm Johnson</div>
+        <h1>
+          <span class="ln"><span>Building the <span class="hl">cloud</span>&nbsp;</span></span>
+          <span class="ln"><span>that <span class="hl">AI</span> runs on.</span></span>
+        </h1>
+        <p class="hero-sub"><span class="accent">Senior Product Manager at Microsoft Azure.</span> Shaping the container infrastructure behind the world's largest cloud and AI workloads.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 · WHAT I DO ============ -->
+<section id="what">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <div class="sec-kicker">About</div>
+      <h2>What I do</h2>
+    </div>
+
+    <div class="do-grid">
+      <div class="do-card glass tilt" data-r>
+        <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg></div>
+        <div class="label">AI Infrastructure</div>
+        <h3>Native systems for AI</h3>
+        <p>Cold starts for training and inferencing. HPC orchestration and Kubernetes clusters for agentic systems. Parallel delivery of containers and models to frontier labs.</p>
+      </div>
+      <div class="do-card glass tilt" data-r style="transition-delay:.08s">
+        <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="label">Reliability &amp; Performance</div>
+        <h3>Built for the worst day</h3>
+        <p>High availability, seamless failovers, hardened networking, and performance at every layer, built into Azure to enable the world's largest AI workloads.</p>
+      </div>
+      <div class="do-card glass tilt" data-r style="transition-delay:.16s">
+        <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div class="label">Security &amp; Governance</div>
+        <h3>Trust at every layer</h3>
+        <p>Supply chain security, authentication and authorization, RBAC and ABAC, observability, and governance for AI workloads and the artifacts they depend on.</p>
+      </div>
+      <div class="do-card glass tilt" data-r style="transition-delay:.24s">
+        <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="label">Leadership</div>
+        <h3>Driving teams and strategy</h3>
+        <p>Senior PM working with teams across Azure's containers and cloud-native portfolio to land impact end to end, from the world's largest AI customers to Azure-wide initiatives.</p>
+      </div>
+      <div class="do-card glass tilt" data-r style="transition-delay:.32s">
+        <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></div>
+        <div class="label">Engineering</div>
+        <h3>Leading by building</h3>
+        <p>Designing systems, shipping production code, and working incident bridges. Building what PMs, engineers, and business operations all trust. Sleeves rolled up, even while leading.</p>
+      </div>
+      <div class="do-card glass tilt" data-r style="transition-delay:.4s">
+        <div class="glyph"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg></div>
+        <div class="label">Impact &amp; Voice</div>
+        <h3>Compounding in public</h3>
+        <p>Years of durable business impact across Azure and Microsoft. Shaping the public conversation. Evangelizing systems thinking, structural reasoning, and lessons learned for AI infrastructure and economics.</p>
+      </div>
+    </div>
+
+    <p class="mission" id="mission"><span class="mline">Started as a software engineer across the Linux and Kubernetes ecosystems, building engineering fundamentals deep in Azure's stack.</span><span class="mline">Grew into a technical product manager, landing durable capabilities across Azure Container Registry and Azure Kubernetes Service.</span><span class="mline">Senior PM driving Azure-wide initiatives on the industry's emergent problems.</span></p>
+  </div>
+</section>
+
+<!-- ============ 2.5 · EXPERIENCE ============ -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <div class="sec-kicker">The road here</div>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="tl" id="tl">
+      <div class="tl-line" aria-hidden="true"><div class="tl-fill" id="tlFill"></div></div>
+
+      <div class="tl-era">
+        <div class="tl-chip glass">Azure Product</div>
+        <article class="tl-item l now">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>Senior Product Manager</h3>
+            <div class="tl-org">Microsoft Azure</div>
+            <div class="tl-meta">Sep 2025 — Present · Seattle, WA</div>
+            <p>Senior PM across Azure's Kubernetes and container registries portfolio: Azure Container Registry, Azure Kubernetes Service, and Azure Cloud Native Fundamentals. Scaling the performance, reliability, and supply chain security behind the world's largest cloud and AI workloads.</p>
+          </div>
+        </article>
+        <article class="tl-item r">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>Product Manager II</h3>
+            <div class="tl-org">Microsoft Azure</div>
+            <div class="tl-meta">Apr 2022 — Sep 2025 · Seattle, WA</div>
+            <p>Owned the performance, reliability, and security of Azure Container Registry and its integrations across Azure services. Drove vulnerability management, supply chain security, and open source container ecosystem improvements to enable scale.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="tl-era">
+        <div class="tl-chip glass">Azure Engineering</div>
+        <article class="tl-item l">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>Software Engineer II</h3>
+            <div class="tl-org">Microsoft Azure</div>
+            <div class="tl-meta">Sep 2020 — Apr 2022 · Vancouver, BC → Seattle, WA</div>
+            <p>Extended telemetry, on-call automation, and security playbooks for Linux virtual machines and Kubernetes clusters. Helped build Azure's first service mesh offering on Open Service Mesh: Envoy-based traffic management, observability, and governance for Kubernetes at scale.</p>
+          </div>
+        </article>
+        <article class="tl-item r">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>Software Engineer</h3>
+            <div class="tl-org">Microsoft Azure</div>
+            <div class="tl-meta">Nov 2019 — Aug 2020 · Vancouver, BC</div>
+            <p>Designed fast user provisioning systems for Red Hat, CentOS, Fedora, and Ubuntu through cloud-init and open source projects, powering rapid deployment of Azure Virtual Machines and scale-out of Azure Kubernetes Service clusters.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="tl-era">
+        <div class="tl-chip glass">Internships</div>
+        <article class="tl-item l">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>Student Software Engineer</h3>
+            <div class="tl-org">Atlassian</div>
+            <div class="tl-meta">May 2019 — Aug 2019 · Sydney, NSW</div>
+            <p>Planned and executed the migration of Jira's highest-traffic pages, Jira issues and Jira boards, to React single-page applications. Improved Apdex and reduced page latency.</p>
+          </div>
+        </article>
+        <article class="tl-item r">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>Software Engineering Intern</h3>
+            <div class="tl-org">Microsoft Azure</div>
+            <div class="tl-meta">Nov 2018 — Feb 2019 · Seattle, WA</div>
+            <p>Integrated fast user provisioning and telemetry of Red Hat and CentOS on Azure Virtual Machines, enabling scale out of data warehousing workloads.</p>
+          </div>
+        </article>
+        <article class="tl-item l">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>Software Engineering Intern</h3>
+            <div class="tl-org">Cog Systems</div>
+            <div class="tl-meta">Nov 2017 — Feb 2018 · Sydney, NSW</div>
+            <p>Built the build-and-validation pipeline for a seL4/OKL4 microkernel-based hypervisor on AWS, enabling fast builds and validation of embedded deployments to secure smartphones and automotive systems.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="tl-era">
+        <div class="tl-chip glass">Education</div>
+        <article class="tl-item r">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>Computer Science Teaching Assistant</h3>
+            <div class="tl-org">University of New South Wales (UNSW)</div>
+            <div class="tl-meta">Feb 2017 — Nov 2018 · Sydney, NSW</div>
+            <p>Teaching assistant, academic tutor, lab demonstrator, and exam marker for introductory computer science classes across 4 semesters: data structures and algorithms, microprocessors, software construction, computer systems fundamentals, and programming.</p>
+          </div>
+        </article>
+        <article class="tl-item l">
+          <span class="tl-dot"></span>
+          <div class="tl-card glass tilt">
+            <h3>B.S. Computer Science</h3>
+            <div class="tl-org">University of New South Wales (UNSW)</div>
+            <div class="tl-meta">2016 — 2019 · Sydney, NSW</div>
+            <p>Distinction Graduate, Dean's Honours List.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · WRITING ============ -->
+<section id="writing">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <div class="sec-kicker">What I've done</div>
+      <h2>Portfolio</h2>
+    </div>
+
+    <div class="tabs" data-r id="tabs" role="tablist"></div>
+
+    <div data-r>
+      <div class="car-track" id="track"></div>
+      <div class="car-foot pager">
+        <button class="abtn" id="prev" aria-label="Previous page" data-dir="l"></button>
+        <div class="dots" id="dots"></div>
+        <button class="abtn" id="next" aria-label="Next page" data-dir="r"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 · TESTIMONIALS ============ -->
+<section id="words">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <div class="sec-kicker">What others say</div>
+      <h2>In their words</h2>
+    </div>
+    <div class="t-panel glass tilt" data-r data-tilt-max="2.5">
+      <div class="t-stage" id="tStage"></div>
+      <div class="t-foot pager">
+        <button class="abtn" id="tPrev" aria-label="Previous" data-dir="l"></button>
+        <div class="dots" id="tDots"></div>
+        <button class="abtn" id="tNext" aria-label="Next" data-dir="r"></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · CONNECT ============ -->
+<section id="connect">
+  <div class="wrap">
+    <div class="sec-head" data-r>
+      <div class="sec-kicker">Let's connect</div>
+      <h2>Find me</h2>
+    </div>
+
+    <div class="social">
+      <a class="srow glass tilt" data-r href="https://www.linkedin.com/in/johnsonshi/" target="_blank" rel="noopener">
+        <span class="l">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" style="stroke:var(--lime)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V9h4v1.5A6 6 0 0 1 16 8zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg></span>
+          <span><span class="name">LinkedIn</span><div class="handle">linkedin.com/in/johnsonshi</div></span>
+        </span>
+        <svg class="go" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M7 5h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="srow glass tilt" data-r href="https://x.com/johnsonshi86" target="_blank" rel="noopener">
+        <span class="l">
+          <span class="mark"><svg viewBox="0 0 24 24" style="fill:var(--lime)"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></span>
+          <span><span class="name">X (Twitter)</span><div class="handle">@johnsonshi86</div></span>
+        </span>
+        <svg class="go" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M7 5h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="srow glass tilt" data-r href="https://johnsonshi.substack.com" target="_blank" rel="noopener">
+        <span class="l">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" style="stroke:var(--lime)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16M4 9h16M4 14h16v6l-8-3.5L4 20z"/></svg></span>
+          <span><span class="name">Substack</span><div class="handle">johnsonshi.substack.com</div></span>
+        </span>
+        <svg class="go" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M7 5h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="srow glass tilt" data-r href="https://techcommunity.microsoft.com/users/johnsonshi_msft/1014286" target="_blank" rel="noopener">
+        <span class="l">
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" style="stroke:var(--lime)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1.5"/><rect x="13" y="3" width="8" height="8" rx="1.5"/><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/></svg></span>
+          <span><span class="name">Microsoft Tech Community</span><div class="handle">johnsonshi_msft</div></span>
+        </span>
+        <svg class="go" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M7 5h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="srow glass tilt" data-r href="https://github.com/johnsonshi" target="_blank" rel="noopener">
+        <span class="l">
+          <span class="mark"><svg viewBox="0 0 24 24" style="fill:var(--lime)"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></span>
+          <span><span class="name">GitHub</span><div class="handle">@johnsonshi</div></span>
+        </span>
+        <svg class="go" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 13L13 5M7 5h6v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <footer>
+      <div class="foot">
+        <span>© <span id="fy"></span> Johnson Shi</span>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lenis/1.1.14/lenis.min.js"></script>
+<script>
+/* ==========================================================
+   CONTENT — edit titles, blurbs, and URLs here
+   ========================================================== */
+const WRITING = {
+  "Microsoft Blog": { items:[
+    { title:"Designing for High Availability: The Operational Reference for Running a Geo-Replicated ACR", desc:"An operational reference for running geo-replicated registries at high availability — the failover, routing, and resilience questions teams ask most, answered end to end.", url:"https://techcommunity.microsoft.com/blog/appsonazureblog/designing-for-high-availability-the-operational-reference-for-running-a-geo-repl/4526465" },
+    { title:"Regional Endpoints for ACR Geo-Replication — Now in Public Preview", desc:"Per-replica endpoints are now in public preview: predictable routing, client-side failover, and regional affinity for geo-replicated registries.", url:"https://techcommunity.microsoft.com/blog/appsonazureblog/regional-endpoints-for-azure-container-registry-geo-replication-%E2%80%94-now-in-public-/4525717" },
+    { title:"Determinism over Magic: The Engineering Design Behind ACR Regional Endpoints", desc:"An engineering deep dive into per-replica DNS, portable authentication, certificate strategy, and the trade-offs that keep routing deterministic.", url:"https://techcommunity.microsoft.com/blog/appsonazureblog/determinism-over-magic-the-engineering-design-behind-azure-container-registry-re/4524101" },
+    { title:"Inside ACR Artifact Cache: Pull-Through Caching at Scale", desc:"How ACR's pull-through cache moves artifacts from upstream registries through a multi-tenant platform serving traffic across regions, clouds, and stamps.", url:"https://techcommunity.microsoft.com/blog/appsonazureblog/inside-acr-artifact-cache-pull-through-caching-at-scale/4524949" },
+    { title:"How ACR Runs Multi-Tenancy at Scale: Compute Stamp Rebalancing", desc:"Why you never see it happen: how ACR rebalances compute stamps under multi-tenant load without customers noticing.", url:"https://techcommunity.microsoft.com/blog/appsonazureblog/how-acr-runs-multi-tenancy-at-scale-compute-stamp-rebalancing-and-why-you-never-/4523014" },
+    { title:"How ACR Artifact Cache Handles Multi-Arch Images", desc:"What gets cached, when webhooks fire, and how to verify when an image is fully stored locally and no longer pulled through from upstream.", url:"https://techcommunity.microsoft.com/blog/appsonazureblog/how-acr-artifact-cache-handles-multi-arch-images-what-gets-cached-and-when-webho/4514744" },
+    { title:"Health-Aware Failover for ACR Geo-Replication", desc:"The global endpoint now routes around unhealthy geo-replicas automatically — regional health evaluation, failover, and automatic failback.", url:"https://techcommunity.microsoft.com/blog/appsonazureblog/health-aware-failover-for-azure-container-registry-geo-replication/4501730" },
+    { title:"Azure Container Registry Premium SKU Now Supports 100 TiB Storage", desc:"A 2.5x storage increase, faster geo-replication sync, and new Portal capacity visibility — headroom for AI-era artifacts.", url:"https://techcommunity.microsoft.com/blog/appsonazureblog/azure-container-registry-premium-sku-now-supports-100-tib-storage/4497651" },
+    { title:"ACR Repository Permissions with Attribute-Based Access Control (ABAC)", desc:"Repository-scoped permissions for centralized registries — moving past the all-or-nothing choice of registry-wide RBAC.", url:"https://blog.aks.azure.com/2026/01/23/acr-abac-repository-permissions" }
+  ]},
+  "Substack": { items:[
+    { title:"The GPU Depreciation Cycle Debate Is Asking the Wrong Question", desc:"Short depreciation cycles, long depreciation cycles, and why neoclouds, AI providers, and chipmakers all win either way.", url:"https://johnsonshi.substack.com/p/the-gpu-depreciation-cycle-debate" },
+    { title:"Your Capacity Signals Have a Shelf Life", desc:"The bottleneck always moves — why capacity engineering looks more like managing a Costco than setting signals once and walking away.", url:"https://johnsonshi.substack.com/p/your-capacity-signals-have-a-shelf-life" },
+    { title:"Anything That Can Be Capitalized Eventually Gets Operationalized", desc:"A structural pattern has reshaped servers, labor, and software licenses. AI is now running the same playbook — simultaneously — on software production and human capital.", url:"https://johnsonshi.substack.com/p/anything-that-can-be-capitalized-eventually-gets-operationalized" },
+    { title:"Agent Skills: Teaching AI Agents Like You'd Onboard a New Hire", desc:"Why the smartest way to teach an AI agent is a Markdown file and a YAML header.", url:"https://johnsonshi.substack.com/p/agent-skills-teaching-ai-agents-like-onboarding-a-new-hire" },
+    { title:"Stop Writing Prompts with String Manipulation: Why DSPy Treats LLMs as Typed Functions", desc:"How typed function signatures replace prompt engineering for scalable AI products.", url:"https://johnsonshi.substack.com/p/dspy-typed-functions-replace-prompt-engineering" },
+    { title:"Developing AI Taste: Understanding the Positioning Battle in AI", desc:"Is your organization looking for AI that thinks with you or for you? Does things with you, or for you?", url:"https://johnsonshi.substack.com/p/developing-ai-taste-part-1-the-positioning-battle-in-ai" },
+    { title:"Exa and the Economics of Taxing Agentic Information Streams", desc:"Exa's bet that owning agentic web I/O can be as powerful as Stripe owning payment rails — taxing agentic information streams the way Stripe taxes transactions.", url:"https://johnsonshi.substack.com/p/exa-and-the-economics-of-taxing-agentic" },
+    { title:"Punching Holes in the Mystery: Demystifying Open-Source Software", desc:"Open source is part idealism, part strategy. Like punch-card programming standards, it powered computing and built entire industries with room for profit.", url:"https://johnsonshi.substack.com/p/punching-holes-in-the-mystery-demystifying" },
+    { title:"State Capitalism Strikes Back — The East Asian Blueprint", desc:"What state capitalism really means, and how East Asian powerhouses rewrote the rules of growth — a blueprint for America's industrial revival.", url:"https://johnsonshi.substack.com/p/state-capitalism-strikes-back-the" }
+  ]},
+  "GitHub": { items:[
+    { title:"canonical/cloud-init", repo:"canonical/cloud-init", lang:"Python", stars:3700, forks:1100, desc:"Official upstream for cloud-init: the industry-standard cloud instance initialization tool.", url:"https://github.com/canonical/cloud-init", cta:"View repo" },
+    { title:"openservicemesh/osm", repo:"openservicemesh/osm", lang:"Go", stars:2600, forks:271, desc:"A lightweight, extensible, cloud native service mesh for uniformly managing, securing, and observing highly dynamic microservice environments.", url:"https://github.com/openservicemesh/osm", cta:"View repo" },
+    { title:"deislabs/image-layer-provenance", repo:"deislabs/image-layer-provenance", lang:"Go", stars:45, forks:3, desc:"Container image provenance spec that allows tracing CVEs detected in registry images back to a CVE's source of origin.", url:"https://github.com/deislabs/image-layer-provenance", cta:"View repo" },
+    { title:"Azure/peerd", repo:"Azure/peerd", lang:"Go", stars:132, forks:18, desc:"Peer-to-peer distribution of container content in Kubernetes clusters.", url:"https://github.com/Azure/peerd", cta:"View repo" },
+    { title:"oras-project/oras", repo:"oras-project/oras", lang:"Go", stars:2300, forks:237, desc:"OCI registry client for managing artifacts, images, and packages. A CNCF project.", url:"https://github.com/oras-project/oras", cta:"View repo" },
+    { title:"Azure/acr", repo:"Azure/acr", lang:"Shell", stars:174, forks:132, desc:"Azure Container Registry samples, troubleshooting tips, and references.", url:"https://github.com/Azure/acr", cta:"View repo" },
+    { title:"Azure/azure-cli", repo:"Azure/azure-cli", lang:"Python", stars:4500, forks:3400, desc:"The Azure Command-Line Interface — the cross-platform CLI for managing Azure resources.", url:"https://github.com/Azure/azure-cli", cta:"View repo" },
+    { title:"openservicemesh/osm-health", repo:"openservicemesh/osm-health", lang:"Go", stars:2, forks:6, desc:"CLI for diagnosing and troubleshooting the health of an Open Service Mesh installation.", url:"https://github.com/openservicemesh/osm-health", cta:"View repo" }
+  ]}
+};
+
+const TESTIMONIALS = [
+  { quote:"You consistently bring a strong combination of product vision, technical depth, and system design thinking. You go beyond the PM role by engaging deeply in architecture discussions, understanding complex technical tradeoffs, and helping shape solutions that balance customer needs with long-term platform direction.", role:"Principal Software Engineering Manager, Azure" },
+  { quote:"If I had to single out one individual from the product team, Johnson would be my top choice. His consistency, accountability, and customer-first mindset truly set him apart. I'm glad to be partnering with him in driving the development, delivery, and adoption of ACR capabilities across our financial services industry customers.", role:"Principal Cloud Solution Architect, Azure" },
+  { quote:"One of your biggest strengths is your ability to connect customer scenarios with product strategy. You actively engage with customers, understand their pain points, and translate those insights into actionable product investments — and you drive adoption by working directly with customers and partners to ensure those investments are understood, validated, and ultimately used.", role:"Principal Software Engineering Manager, Azure" },
+  { quote:"You have authored and driven several high-quality PRDs across foundational areas such as storage, governance, RBAC, and platform experience. These documents not only define features, but also help align engineering, product, and partner teams around a clear long-term vision.", role:"Principal Software Engineering Manager, Azure" },
+  { quote:"You are collaborative, open to feedback, and always willing to dive into details when needed. The strong trust and partnership between engineering and product have helped us navigate ambiguity, make better decisions, and execute effectively.", role:"Principal Software Engineering Manager, Azure" },
+  { quote:"What differentiates Johnson is his responsiveness and depth of involvement in addressing complex and evolving requirements from strategic customers. Whether it's driving alignment on feature requirements, sharing detailed technical insights, or pushing forward action items and internal coordination, he plays a critical role in bridging customer needs with product direction.", role:"Principal Cloud Solution Architect, Azure" },
+  { quote:"You have deep and wide ACR knowledge, and you keep learning — taking ownership across very different areas, from performance and storage to stamps and regional endpoints. And you share knowledge openly, across ACR and across orgs, building the relationships that make it easier to move things forward together.", role:"Senior Product Manager, Azure" },
+  { quote:"You connect with customers at the next level. You go beyond running interviews — you explain the technology behind the product, so the world's largest AI and financial services customers understand it and feel confident using ACR. I have heard the same back from account teams and support engineers: customers leave your conversations more confident, because they know there is a strong product group behind it.", role:"Senior Product Manager, Azure" }
+];
+
+/* ==========================================================
+   WRITING — tabs + pagination
+   ========================================================== */
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+const PER_PAGE = matchMedia('(max-width:760px)').matches ? 2 : 4;
+
+const tabsEl=document.getElementById('tabs'), track=document.getElementById('track'),
+      dotsEl=document.getElementById('dots'), prev=document.getElementById('prev'), next=document.getElementById('next');
+let tabName=Object.keys(WRITING)[0], page=0;
+
+// tab buttons are built once; clicks only toggle classes so the active-state
+// transition (background/glow) actually animates
+function renderTabs(){
+  Object.keys(WRITING).forEach(n=>{
+    const b=document.createElement('button');
+    b.className='tab';
+    b.setAttribute('role','tab');
+    b.textContent=n;
+    b.onclick=()=>{if(n===tabName)return; tabName=n;page=0;setActiveTab();update();};
+    tabsEl.appendChild(b);
+  });
+  setActiveTab();
+}
+function setActiveTab(){
+  [...tabsEl.children].forEach(b=>{
+    const on=b.textContent===tabName;
+    b.classList.toggle('active',on);
+    b.setAttribute('aria-selected',on);
+  });
+}
+
+// shared chevron icon for all pager buttons
+const CHEV={l:'M10 3L5 8l5 5',r:'M6 3l5 5-5 5'};
+document.querySelectorAll('.abtn[data-dir]').forEach(b=>{
+  b.innerHTML=`<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="${CHEV[b.dataset.dir]}" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+});
+
+// All tabs' pages are rendered once and stacked in the same grid cell.
+// The track is therefore always as tall as the tallest page across every
+// tab, so neither pagination nor tab switching ever moves the layout.
+function renderAll(){
+  const html=Object.keys(WRITING).map(name=>{
+    const items=WRITING[name].items;
+    const pages=[]; for(let i=0;i<items.length;i+=PER_PAGE) pages.push(items.slice(i,i+PER_PAGE));
+    return pages.map((pg,pi)=>`<div class="car-page fader" data-tab="${name}" data-page="${pi}">${pg.map(it=>`
+    <a class="wcard glass tilt" href="${it.url}" target="_blank" rel="noopener">
+      <h3>${it.title}</h3>
+      <p>${it.desc}</p>
+      ${it.repo?`<span class="gh-stats" data-repo="${it.repo}">${statsHTML(it)}</span>`:''}
+      <span class="more">${it.cta||'Read more'} <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    </a>`).join('')}</div>`).join('');
+  }).join('');
+  track.innerHTML=html;
+  prev.onclick=()=>{const n=pageCount();page=(page-1+n)%n;update();};
+  next.onclick=()=>{const n=pageCount();page=(page+1)%n;update();};
+  bindGlass(track);
+  loadRepoStats(track);
+  update();
+}
+
+const pageCount=()=>Math.ceil(WRITING[tabName].items.length/PER_PAGE);
+
+function update(){
+  [...track.children].forEach(p=>
+    p.classList.toggle('active', p.dataset.tab===tabName && +p.dataset.page===page));
+  const n=pageCount();
+  if(dotsEl.children.length!==n){ // rebuild only on tab change; persistent dots animate
+    dotsEl.innerHTML=Array.from({length:n},(_,i)=>
+      `<button class="dot" aria-label="Page ${i+1}"></button>`).join('');
+    [...dotsEl.children].forEach((d,i)=>d.onclick=()=>{page=i;update();});
+  }
+  [...dotsEl.children].forEach((d,i)=>d.classList.toggle('active',i===page));
+}
+
+/* ==========================================================
+   GITHUB STATS — live language / stars / forks per repo card
+   ========================================================== */
+const LANG_COLORS={Go:"#00ADD8",Python:"#3572A5",TypeScript:"#3178c6",JavaScript:"#f1e05a",Rust:"#dea584",Shell:"#89e051",C:"#555555","C++":"#f34b7d","C#":"#178600",HTML:"#e34c26",Java:"#b07219"};
+const fmt=n=>n>=1000?(Math.round(n/100)/10)+"k":n;
+const validStats=d=>!!d&&typeof d.lang==='string'&&d.lang.length>0&&Number.isFinite(d.stars)&&Number.isFinite(d.forks);
+function statsHTML(d){
+  if(!validStats(d)) return '';
+  return `<span class="it"><span class="lang-dot" style="background:${LANG_COLORS[d.lang]||'#8e8e8a'}"></span>${d.lang}</span>`+
+    `<span class="it"><svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.819 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>${fmt(d.stars)}</span>`+
+    `<span class="it"><svg viewBox="0 0 16 16"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0zM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0z"/></svg>${fmt(d.forks)}</span>`;
+}
+function loadRepoStats(scope){
+  scope.querySelectorAll('.gh-stats[data-repo]').forEach(el=>{
+    fetch('https://api.github.com/repos/'+el.dataset.repo)
+      .then(r=>r.ok?r.json():null)
+      .then(d=>{
+        if(!d) return;
+        const c={lang:d.language,stars:d.stargazers_count,forks:d.forks_count};
+        if(!validStats(c)) return; // partial/invalid payload: keep whatever is already shown
+        el.innerHTML=statsHTML(c);
+      })
+      .catch(()=>{});
+  });
+}
+
+/* ==========================================================
+   TESTIMONIALS
+   ========================================================== */
+const tStage=document.getElementById('tStage'), tDots=document.getElementById('tDots');
+let ti=0;
+function renderT(){
+  tStage.innerHTML=TESTIMONIALS.map((t,i)=>`
+    <div class="t-slide fader${i===0?' active':''}">
+      <blockquote>${t.quote.split('\n\n').map(p=>`<p>${p}</p>`).join('')}</blockquote>
+      <span class="t-role">${t.role}</span>
+    </div>`).join('');
+  tDots.innerHTML=TESTIMONIALS.map((_,i)=>`<button class="dot${i===0?' active':''}" aria-label="Testimonial ${i+1}"></button>`).join('');
+  [...tDots.children].forEach((d,i)=>d.onclick=()=>go(i));
+  document.getElementById('tPrev').onclick=()=>go((ti-1+TESTIMONIALS.length)%TESTIMONIALS.length);
+  document.getElementById('tNext').onclick=()=>go((ti+1)%TESTIMONIALS.length);
+}
+function go(i){
+  ti=i;
+  [...tStage.children].forEach((s,k)=>s.classList.toggle('active',k===i));
+  [...tDots.children].forEach((d,k)=>d.classList.toggle('active',k===i));
+}
+
+/* ==========================================================
+   LIQUID GLASS INTERACTIONS
+   ========================================================== */
+// per-element 3D tilt (rAF-throttled)
+function bindGlass(root){
+  if(!finePointer || reduced) return;
+  root.querySelectorAll('.glass.tilt').forEach(el=>{
+    if(el.dataset.bound) return; el.dataset.bound='1';
+    let raf=null, ev=null;
+    const tiltMax = parseFloat(el.dataset.tiltMax)||6;
+    el.addEventListener('mousemove',e=>{
+      ev=e;
+      if(raf) return;
+      raf=requestAnimationFrame(()=>{
+        const r=el.getBoundingClientRect();
+        const rx=(((ev.clientY-r.top)/r.height)-.5)*-tiltMax, ry=(((ev.clientX-r.left)/r.width)-.5)*tiltMax;
+        el.style.setProperty('--rx',rx.toFixed(2)+'deg');
+        el.style.setProperty('--ry',ry.toFixed(2)+'deg');
+        el.style.setProperty('--ty','-3px');
+        raf=null;
+      });
+    });
+    el.addEventListener('mouseleave',()=>{
+      el.style.setProperty('--rx','0deg');
+      el.style.setProperty('--ry','0deg');
+      el.style.setProperty('--ty','0px');
+    });
+  });
+}
+bindGlass(document);
+
+// global cursor glow
+const glow=document.getElementById('cursorGlow');
+if(!reduced){
+  const touchOnly=!finePointer;
+  let gx=innerWidth/2, gy=innerHeight*.35, tx=gx, ty=gy;
+  if(!touchOnly) addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;},{passive:true});
+  (function loop(now){
+    const t=(now||0)/1000;
+    let ox,oy;
+    if(touchOnly){ // no cursor: slow autonomous wander across the viewport
+      ox=innerWidth*(.5+.32*Math.sin(t*.13));
+      oy=innerHeight*(.42+.26*Math.cos(t*.094));
+    }else{ // idle Lissajous orbit around the cursor (mismatched freqs = organic drift)
+      ox=tx+95*Math.sin(t*.92);
+      oy=ty+95*Math.cos(t*.61);
+    }
+    gx+=(ox-gx)*.06; gy+=(oy-gy)*.06;
+    const breathe=1+.05*Math.sin(t*.9); // slow swell, ~7s period
+    glow.style.transform=`translate(${gx}px,${gy}px) translate(-50%,-50%) scale(${breathe})`;
+    glow.style.opacity=(.8+.2*Math.sin(t*.9)).toFixed(3);
+    requestAnimationFrame(loop);
+  })();
+}
+
+/* ==========================================================
+   SCROLL — smooth scroll, reveals, word scrub, orb parallax
+   ========================================================== */
+if(typeof Lenis!=='undefined' && !reduced){
+  const lenis=new Lenis({lerp:.1,smoothWheel:true});
+  const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};
+  requestAnimationFrame(raf);
+  if(typeof ScrollTrigger!=='undefined') lenis.on('scroll',ScrollTrigger.update);
+  document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();lenis.scrollTo(t,{offset:-80});}
+  }));
+}
+
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>30),{passive:true});
+
+// mission statement word scrub — lime phrases matched word-sequence-aware
+document.getElementById('fy').textContent=new Date().getFullYear();
+const ms=document.getElementById('mission');
+const LIME_PHRASES=['started','grew','software engineer','technical product manager','senior pm'];
+ms.querySelectorAll('.mline').forEach(line=>{
+  const words=line.textContent.trim().split(/\s+/);
+  const norm=words.map(w=>w.replace(/[^a-z]/gi,'').toLowerCase());
+  const lime=new Array(words.length).fill(false);
+  LIME_PHRASES.forEach(p=>{
+    const pw=p.split(' ');
+    for(let i=0;i+pw.length<=norm.length;i++){
+      if(pw.every((w,k)=>norm[i+k]===w)) for(let k=0;k<pw.length;k++) lime[i+k]=true;
+    }
+  });
+  line.innerHTML=words.map((w,i)=>{
+    if(!lime[i]) return `<span class="w">${w}</span>`;
+    const m=w.match(/^([^A-Za-z]*)([A-Za-z][A-Za-z'’-]*)?(.*)$/);
+    return `<span class="w lime">${m[1]||''}<span class="li">${m[2]||''}</span>${m[3]||''}</span>`;
+  }).join(' ');
+});
+
+if(typeof gsap!=='undefined' && typeof ScrollTrigger!=='undefined' && !reduced){
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger:ms, start:'top 78%', end:'bottom 50%', scrub:.4,
+    onUpdate(self){
+      const ws=ms.querySelectorAll('.w'), lit=Math.floor(self.progress*ws.length);
+      ws.forEach((w,i)=>{ if(i<=lit) w.classList.add('lit'); }); // one-way: never un-light
+    }
+  });
+
+  // atmosphere orbs drift at different depths
+  document.querySelectorAll('.orb').forEach(o=>{
+    gsap.to(o,{y:()=>-innerHeight*parseFloat(o.dataset.px),ease:'none',
+      scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:true}});
+  });
+}else{
+  new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting) ms.querySelectorAll('.w').forEach((w,i)=>setTimeout(()=>w.classList.add('lit'),i*26));
+  }),{threshold:.4}).observe(ms);
+}
+
+// experience timeline — spine draws with scroll; entries ignite one-way
+const tlEl=document.getElementById('tl');
+if(tlEl){
+  // the spine ends exactly at the last node (the CS degree), not the container bottom
+  const tlLine=tlEl.querySelector('.tl-line');
+  const tlDots=tlEl.querySelectorAll('.tl-dot');
+  const yWithin=(node,ancestor)=>{let y=0,el=node;while(el&&el!==ancestor){y+=el.offsetTop;el=el.offsetParent;}return y;}; // transform-immune
+  const sizeSpine=()=>{
+    const last=tlDots[tlDots.length-1];
+    tlLine.style.height=Math.max(0, yWithin(last,tlEl) + last.offsetHeight/2 - 6)+'px';
+  };
+  sizeSpine();
+  addEventListener('resize',sizeSpine,{passive:true});
+  addEventListener('load',sizeSpine);
+  if(document.fonts) document.fonts.ready.then(sizeSpine);
+  if(typeof gsap!=='undefined' && typeof ScrollTrigger!=='undefined' && !reduced){
+    gsap.to('#tlFill',{scaleY:1,ease:'none',
+      scrollTrigger:{trigger:tlEl,start:'top 72%',end:'bottom 62%',scrub:.4}});
+    tlEl.querySelectorAll('.tl-item').forEach(it=>
+      ScrollTrigger.create({trigger:it,start:'top 82%',once:true,onEnter:()=>it.classList.add('lit')}));
+  }else{
+    document.getElementById('tlFill').style.transform='scaleY(1)';
+    const tio=new IntersectionObserver(es=>es.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('lit');tio.unobserve(e.target);}
+    }),{threshold:.2});
+    tlEl.querySelectorAll('.tl-item').forEach(i=>tio.observe(i));
+  }
+}
+
+// reveals — gentle fade-up once on first scroll-into-view
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){
+    const el=e.target;
+    el.classList.add('in');
+    if(el.classList.contains('tilt')) // release reveal lock after the rise so cursor tilt works
+      setTimeout(()=>{el.removeAttribute('data-r');el.classList.remove('in');el.style.transitionDelay='';},900);
+    io.unobserve(el);
+  }
+}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('[data-r]').forEach(el=>io.observe(el));
+
+renderTabs(); renderAll(); renderT();
+</script>
+</body>
+</html>
